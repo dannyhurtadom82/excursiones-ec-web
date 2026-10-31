@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EXCURSIONES EC | Alquiler de equipos y excursiones de montaña en Ecuador</title>
+<meta name="description" content="Alquiler de equipos de montaña y excursiones guiadas a media y alta montaña en Ecuador. Reserva por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4EFEA;--surface:#FFFFFF;--ink:#3E2723;--muted:#6D4C41;--line:#E3D8CE;
+  --sun:#E65100;--gold:#FFB300;--moss:#2E7D32;--sky:#DCEBF5;--terra:#B5532F;
+  --ec-y:#FBC02D;--ec-b:#1565C0;--ec-r:#D32F2F;
+  --head:"Fraunces",Georgia,serif;--body:"Nunito Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --shadow:0 6px 20px rgba(62,39,35,.12);
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1E1512;--surface:#2B1F1A;--ink:#F4EFEA;--muted:#CDB9AB;--line:#4A3830;--sky:#22313D;--shadow:0 6px 20px rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{--bg:#1E1512;--surface:#2B1F1A;--ink:#F4EFEA;--muted:#CDB9AB;--line:#4A3830;--sky:#22313D;--shadow:0 6px 20px rgba(0,0,0,.4)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;font-size:16px}
+img,svg{max-width:100%}
+h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0 0 .5em}
+a{color:inherit}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+section{padding:4rem 0}
+.eyebrow{color:var(--sun);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem}
+.lead{color:var(--muted);max-width:62ch}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.3rem;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .15s;font-size:1rem}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn-wa{background:#1FA855;color:#fff}
+.btn-sun{background:var(--sun);color:#fff}
+.btn-ghost{border-color:#fff;color:#fff}
+.btn-line{border-color:var(--sun);color:var(--sun)}
+.btn-sm{padding:.55rem 1rem;font-size:.9rem}
+/* Header */
+header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:1rem}
+.logo{display:flex;flex-direction:column;text-decoration:none;line-height:1}
+.logo b{font-family:var(--head);font-weight:800;font-size:1.25rem;letter-spacing:.02em}
+.logo b span{color:var(--sun)}
+.flag{display:flex;height:5px;width:100%;margin-top:4px;border-radius:3px;overflow:hidden}
+.flag i{display:block}.flag i:nth-child(1){flex:2;background:var(--ec-y)}.flag i:nth-child(2){flex:1;background:var(--ec-b)}.flag i:nth-child(3){flex:1;background:var(--ec-r)}
+nav ul{display:none;list-style:none;margin:0;padding:0;gap:1.6rem}
+nav a{text-decoration:none;font-weight:600}
+nav a:hover{color:var(--sun)}
+.burger{background:none;border:0;width:44px;height:44px;cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:24px;height:2.5px;background:var(--ink);border-radius:2px;transition:.25s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.head-cta{display:none}
+nav.open ul{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:100%;background:var(--bg);padding:1rem 1.25rem 1.5rem;border-bottom:1px solid var(--line);gap:1rem;box-shadow:var(--shadow)}
+/* Hero */
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;color:#fff;padding:5rem 0 9rem;overflow:hidden;background:linear-gradient(180deg,#27456b 0%,#7a6b8a 30%,#e8845a 62%,#ffb74d 82%,#ffd78a 100%)}
+.hero .sun{position:absolute;left:50%;bottom:22%;width:min(44vw,320px);aspect-ratio:1;border-radius:50%;transform:translateX(-50%);background:radial-gradient(circle,#fff4c2 0%,#ffd35a 45%,rgba(255,179,0,0) 72%);filter:blur(2px)}
+.hero svg.mt{position:absolute;left:0;bottom:-1px;width:100%;height:46%}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-size:clamp(2.2rem,7vw,4.2rem);font-weight:800;max-width:15ch;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.hero p{font-size:1.15rem;max-width:52ch;text-shadow:0 1px 10px rgba(0,0,0,.4)}
+.hero .btns{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.5rem}
+.stats{display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;margin-top:2rem}
+.stats div{font-size:.9rem}.stats b{display:block;font-family:var(--head);font-size:1.6rem;color:var(--gold)}
+/* Cards */
+.grid{display:grid;gap:1.25rem;grid-template-columns:1fr;margin-top:2rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.thumb{position:relative;overflow:hidden;height:170px;display:grid;place-content:center;font-size:3.4rem;background:linear-gradient(135deg,var(--c1),var(--c2))}
+.card .body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.card h3{font-size:1.2rem;margin:0}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.tag{align-self:flex-start;font-size:.75rem;font-weight:700;padding:.2rem .65rem;border-radius:999px;background:var(--sky);color:var(--ec-b)}
+:root[data-theme="dark"] .tag{color:#9CC8F0}
+.card .btn{margin-top:auto;justify-content:center}
+#equipos{background:var(--bg)}
+#excursiones{background:linear-gradient(180deg,var(--sky),var(--bg))}
+.tabs{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;margin-top:1.2rem}
+.tabs button{border:0;background:none;padding:.6rem 1.2rem;border-radius:999px;font:700 .95rem var(--body);color:var(--muted);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--sun);color:#fff}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem .9rem;font-size:.85rem;color:var(--muted);margin:.2rem 0}
+.diff{font-weight:700}
+.d-media{color:var(--moss)}.d-alta{color:var(--ec-r)}
+.panel[hidden]{display:none}
+/* Why */
+.why{background:var(--ink);color:#F4EFEA}
+.why .lead{color:#CDB9AB}
+.why .item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:1.4rem}
+.why .ic{width:52px;height:52px;border-radius:14px;display:grid;place-content:center;font-size:1.6rem;background:var(--gold);margin-bottom:.8rem}
+.why h3{font-size:1.15rem}.why p{margin:0;color:#CDB9AB;font-size:.95rem}
+/* About */
+.about{display:grid;gap:2rem;align-items:center}
+.about .art{border-radius:22px;min-height:260px;background:linear-gradient(160deg,#27456b,#e8845a 70%,#ffd78a);position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.about .art svg{position:absolute;bottom:0;left:0;width:100%}
+.cta-band{background:linear-gradient(120deg,var(--terra),var(--sun));color:#fff;text-align:center;padding:3.5rem 0}
+.cta-band p{max-width:52ch;margin:0 auto 1.4rem}
+/* Footer */
+footer{background:#2A1B17;color:#E9DDD3;padding:3.5rem 0 2rem}
+footer .cols{display:grid;gap:2rem;grid-template-columns:1fr}
+footer h4{font-family:var(--head);margin:0 0 .8rem;color:var(--gold)}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
+footer a{text-decoration:none}footer a:hover{color:var(--gold)}
+.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:2rem;padding-top:1.2rem;font-size:.85rem;color:#B7A598}
+.map{background:rgba(255,255,255,.05);border-radius:16px;padding:1rem;max-width:300px}
+.map figcaption{font-size:.8rem;color:#B7A598;margin-top:.4rem}
+
+.price{font-family:var(--head);font-weight:800;font-size:1.2rem;color:var(--sun)}
+.price small{font-family:var(--body);font-size:.75rem;font-weight:600;color:var(--muted)}
+.note{font-size:.85rem;color:var(--muted);margin-top:.8rem}
+.gal{display:grid;gap:.8rem;grid-template-columns:repeat(2,1fr);margin-top:2rem}
+.ph{position:relative;margin:0;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,var(--c1),var(--c2));display:grid;place-content:center;font-size:3rem;box-shadow:var(--shadow)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;cursor:zoom-in}
+.ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.2rem .9rem .6rem;font-size:.85rem;font-weight:700;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.65));z-index:1;pointer-events:none}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:60;display:grid;place-content:center;padding:1rem;cursor:zoom-out}
+.lb[hidden]{display:none}.lb img{max-height:90vh;max-width:100%;border-radius:12px}
+.form{display:grid;gap:1rem;grid-template-columns:1fr;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.5rem;box-shadow:var(--shadow);margin-top:2rem}
+.form label{display:grid;gap:.3rem;font-weight:700;font-size:.9rem}
+.form input,.form select,.form textarea{font:inherit;font-weight:400;padding:.7rem .8rem;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--sun);outline-offset:1px}
+.form .full{grid-column:1/-1}
+#est{font-family:var(--head);font-size:1.15rem;margin:0}
+.err{color:var(--ec-r);font-weight:700;margin:0;min-height:1.2em}
+@media (min-width:640px){.form{grid-template-columns:repeat(2,1fr)}.gal{grid-template-columns:repeat(3,1fr)}}
+/* Floating WA */
+.fab{position:fixed;right:max(1rem,env(safe-area-inset-right,0px));bottom:max(1rem,env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:.5rem;background:#1FA855;color:#fff;text-decoration:none;font-weight:700;padding:.85rem 1.1rem;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.fab svg{width:26px;height:26px;fill:#fff}
+.fab::after{content:"";position:absolute;inset:0;border-radius:999px;border:2px solid #1FA855;animation:pulse 2.2s infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.35);opacity:0}}
+.reveal{opacity:0;transform:translateY(18px);transition:.6s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.fab::after{animation:none}html{scroll-behavior:auto}}
+.fab .t{display:none}
+@media (min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}.fab .t{display:inline}footer .cols{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:960px){
+  .burger{display:none}
+  nav ul{display:flex}
+  .head-cta{display:inline-flex}
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .grid.two{grid-template-columns:repeat(2,1fr)}
+  .about{grid-template-columns:1fr 1fr}
+  footer .cols{grid-template-columns:1.4fr 1fr 1fr 1fr}
+  section{padding:5.5rem 0}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#inicio" aria-label="EXCURSIONES EC, inicio"><b>EXCURSIONES <span>EC</span></b><span class="flag"><i></i><i></i><i></i></span></a>
+    <nav id="menu" aria-label="Principal">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#equipos">Equipos</a></li>
+        <li><a href="#excursiones">Excursiones</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-wa btn-sm head-cta" href="https://wa.me/593998246744?text=Hola%20EXCURSIONES%20EC%2C%20me%20gustar%C3%ADa%20alquilar%20equipos%20de%20monta%C3%B1a." target="_blank" rel="noopener">Alquilar por WhatsApp</a>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="sun" aria-hidden="true"></div>
+  <svg class="mt" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 300V190L140 120l90 70 120-120 130 150 110-90 150 140 120-110 130 100 110-80 100 90V300z" fill="#7b4a3a" opacity=".55"/>
+    <path d="M0 300V230l170-90 110 80 150-130 140 140 130-60 160 120 140-100 200 110V300z" fill="#4e342e" opacity=".85"/>
+    <path d="M0 300V260l200-70 140 60 170-100 150 90 180-60 160 80 200-40V300z" fill="#2E3B2A"/>
+  </svg>
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--gold)">Alquiler de equipos · Excursiones guiadas</p>
+    <h1>El amanecer en los Andes te está esperando</h1>
+    <p>Equípate con material confiable y sube con guías locales a las montañas más emblemáticas de Ecuador, desde caminatas de media montaña hasta cumbres de alta montaña.</p>
+    <div class="btns">
+      <a class="btn btn-sun" href="#equipos">Ver catálogo</a>
+      <a class="btn btn-ghost" href="#reservar">Cotizar por fechas</a>
+      <a class="btn btn-wa" href="https://wa.me/593998246744?text=Hola%20EXCURSIONES%20EC%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre..." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </div>
+    <div class="stats">
+      <div><b>Media y alta</b>montaña</div>
+      <div><b>Guías</b>experimentados</div>
+      <div><b>Equipos</b>revisados</div>
+    </div>
+  </div>
+</section>
+
+<section id="equipos">
+  <div class="wrap">
+    <p class="eyebrow">Rental</p>
+    <h2>Equipos de montaña en alquiler</h2>
+    <p class="lead">Todo lo que necesitas para tu ascenso o campamento. Escríbenos con tus fechas y confirmamos disponibilidad.</p>
+    <p class="note">Tarifas referenciales en USD por día; se confirman por WhatsApp.</p>
+    <div class="grid" id="equipGrid"></div>
+  </div>
+</section>
+
+<section id="excursiones">
+  <div class="wrap">
+    <p class="eyebrow">Rutas</p>
+    <h2>Excursiones guiadas</h2>
+    <p class="lead">Elige tu nivel de exigencia. Todas las salidas incluyen guía y briefing de seguridad.</p>
+    <p class="note">Tarifas referenciales en USD por persona; se confirman por WhatsApp.</p>
+    <div class="tabs" role="tablist" aria-label="Nivel de montaña">
+      <button role="tab" aria-selected="true" data-tab="media" id="tab-media">Media montaña</button>
+      <button role="tab" aria-selected="false" data-tab="alta" id="tab-alta">Alta montaña</button>
+    </div>
+    <div class="panel" id="panel-media" role="tabpanel" aria-labelledby="tab-media"><div class="grid" data-route="media"></div></div>
+    <div class="panel" id="panel-alta" role="tabpanel" aria-labelledby="tab-alta" hidden><div class="grid" data-route="alta"></div></div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="wrap">
+    <p class="eyebrow">Galería</p>
+    <h2>Así se vive la montaña</h2>
+    <p class="lead">Momentos de nuestras salidas y de nuestro equipo en acción.</p>
+    <div class="gal" id="gal"></div>
+  </div>
+</section>
+
+<section class="why" id="seguridad">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--gold)">Por qué elegirnos</p>
+    <h2>Tu seguridad es la cumbre</h2>
+    <p class="lead">En la montaña los detalles importan. Por eso cuidamos cada equipo y cada salida.</p>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
+      <div class="item reveal"><div class="ic">🛡️</div><h3>Equipos certificados</h3><p>Material revisado y mantenido antes de cada alquiler.</p></div>
+      <div class="item reveal"><div class="ic">🧭</div><h3>Guías experimentados</h3><p>Conocen la montaña, el clima y los tiempos de cada ruta.</p></div>
+      <div class="item reveal"><div class="ic">🤝</div><h3>Atención personalizada</h3><p>Te asesoramos por WhatsApp según tu nivel y tus fechas.</p></div>
+      <div class="item reveal"><div class="ic">⛰️</div><h3>Rutas para cada nivel</h3><p>Desde tu primera caminata hasta una cumbre glaciar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros">
+  <div class="wrap about">
+    <div>
+      <p class="eyebrow">Nosotros</p>
+      <h2>Aventura hecha en Ecuador</h2>
+      <p class="lead">Somos un equipo apasionado por los Andes. Alquilamos equipos de montaña y organizamos excursiones guiadas para que vivas el páramo, los glaciares y los amaneceres ecuatorianos con confianza.</p>
+      <a class="btn btn-line" href="https://wa.me/593998246744?text=Hola%20EXCURSIONES%20EC%2C%20quisiera%20conocer%20m%C3%A1s%20sobre%20ustedes." target="_blank" rel="noopener">Conversemos</a>
+    </div>
+    <div class="art" aria-hidden="true">
+      <svg viewBox="0 0 600 200"><path d="M0 200V120l90-60 80 50 110-90 120 100 90-50 110 70V200z" fill="#4e342e"/><path d="M0 200V150l120-40 100 40 130-60 130 70 120-30V200z" fill="#2E3B2A"/></svg>
+    </div>
+  </div>
+</section>
+
+<section id="reservar">
+  <div class="wrap">
+    <p class="eyebrow">Reserva</p>
+    <h2>Cotiza tus fechas</h2>
+    <p class="lead">Completa el formulario y se abrirá WhatsApp con tu mensaje ya escrito. No se envía nada hasta que tú pulses enviar.</p>
+    <form class="form" id="rf" novalidate>
+      <label><span>¿Qué necesitas?</span><select id="f-tipo"><option value="equipo">Alquiler de equipos</option><option value="excursion">Excursión guiada</option></select></label>
+      <label><span>Equipo / ruta</span><select id="f-item"></select></label>
+      <label><span id="l-qty">Cantidad</span><input type="number" id="f-qty" min="1" max="20" value="1"></label>
+      <label><span id="l-d1">Fecha de retiro</span><input type="date" id="f-d1"></label>
+      <label id="w-d2"><span>Fecha de devolución</span><input type="date" id="f-d2"></label>
+      <label><span>Tu nombre</span><input type="text" id="f-name" autocomplete="name" placeholder="Ej. María Pérez"></label>
+      <label class="full"><span>Comentarios (opcional)</span><textarea id="f-note" rows="3" placeholder="Tallas, nivel de experiencia, otros equipos…"></textarea></label>
+      <p id="est" class="full" aria-live="polite"></p>
+      <p id="f-err" class="err full" role="alert"></p>
+      <button class="btn btn-wa full" type="submit" style="justify-content:center">Enviar por WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<section class="cta-band" id="contacto">
+  <div class="wrap">
+    <h2>¿Listo para tu próxima cumbre?</h2>
+    <p>Cuéntanos qué necesitas y te respondemos por WhatsApp con disponibilidad y opciones.</p>
+    <a class="btn btn-wa" style="background:#fff;color:#1b7a40" href="https://wa.me/593998246744?text=Hola%20EXCURSIONES%20EC%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre..." target="_blank" rel="noopener">Escribir ahora · +593 998 246744</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="#inicio" style="color:#fff"><b>EXCURSIONES <span>EC</span></b><span class="flag"><i></i><i></i><i></i></span></a>
+        <p style="max-width:30ch;margin-top:.8rem;color:#B7A598">Equipos y excursiones de media y alta montaña en Ecuador.</p>
+      </div>
+      <div><h4>Enlaces</h4><ul><li><a href="#inicio">Inicio</a></li><li><a href="#equipos">Equipos</a></li><li><a href="#excursiones">Excursiones</a></li>
+        <li><a href="#galeria">Galería</a></li><li><a href="#nosotros">Nosotros</a></li></ul></div>
+      <div><h4>Contacto</h4><ul><li><a href="https://wa.me/593998246744?text=Hola%20EXCURSIONES%20EC%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre..." target="_blank" rel="noopener">WhatsApp +593998246744</a></li><li>Ecuador</li></ul></div>
+      <figure class="map" style="margin:0">
+        <svg viewBox="0 0 200 200" role="img" aria-label="Mapa orientativo de Ecuador">
+          <path d="M55 40l35-12 30 14 30 8 10 30-14 24 10 22-28 32-34 12-32-18-14-34 8-30z" fill="#4e6b3a" stroke="#E9DDD3" stroke-width="2" stroke-linejoin="round"/>
+          <line x1="40" y1="96" x2="160" y2="96" stroke="#FBC02D" stroke-dasharray="4 4" stroke-width="1.5"/>
+          <circle cx="104" cy="82" r="5" fill="#D32F2F"/><circle cx="104" cy="82" r="10" fill="none" stroke="#D32F2F"/>
+          <text x="114" y="80" fill="#fff" font-size="10">Andes</text>
+          <text x="44" y="92" fill="#FBC02D" font-size="8">Línea ecuatorial</text>
+        </svg>
+        <figcaption>Mapa orientativo · Ecuador</figcaption>
+      </figure>
+    </div>
+    <div class="copy">© <span id="year">2026</span> EXCURSIONES EC. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden><img alt=""></div>
+
+<a class="fab" href="https://wa.me/593998246744?text=Hola%20EXCURSIONES%20EC%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre..." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11 19.8L3 29l6.4-2A13 13 0 1 0 16 3zm0 2.4a10.6 10.6 0 1 1-5.6 19.6l-.4-.2-3.8 1.2 1.2-3.7-.3-.4A10.6 10.6 0 0 1 16 5.4zm-4 5.3c-.3 0-.7.1-1 .5-.4.4-1.3 1.3-1.3 3.100s1.400 3.600 1.600 3.900c.2.2 2.700 4.200 6.600 5.700 3.300 1.300 4 1 4.700.9.700-.1 2.300-.9 2.600-1.800.3-.9.3-1.600.2-1.800l-.6-.3-2.300-1.100c-.3-.1-.6-.2-.8.200-.2.300-.9 1.100-1.100 1.300-.2.200-.4.300-.7.100-.3-.2-1.400-.5-2.600-1.600-1-.9-1.700-2-1.900-2.300-.2-.3 0-.5.100-.7l.5-.6c.2-.2.200-.3.300-.5.100-.2.100-.4 0-.6l-1-2.400c-.3-.6-.5-.5-.8-.5z"/></svg>
+  <span class="t">WhatsApp</span>
+</a>
+
+<script>
+(function(){
+  var WA="https://wa.me/593998246744?text=";
+  function money(n){return "$"+n}
+  var PH={"acampada":"acampada.jpg","chimborazo":"chimborazo.jpg","glaciar":"glaciar.jpg","pasochoa":"pasochoa.jpg","quilotoa":"quilotoa.jpg","rucu-pichincha":"rucu-pichincha.jpg","cotopaxi":"cotopaxi.jpg","ilinizas":"ilinizas.jpg"};
+  function wa(t){return WA+encodeURIComponent(t)}
+  var equipos=[
+    {n:"Carpas de montaña",p:12,e:"⛺",d:"Resistentes al viento y a la lluvia, para 2 o 3 personas.",q:"Excelente estado",c:["#FFE0B2","#FFB74D"]},
+    {n:"Bolsas de dormir",p:6,e:"🛌",d:"Térmicas para clima de páramo y alta montaña.",q:"Higienizadas",c:["#DCEBF5","#90CAF9"]},
+    {n:"Crampones",p:8,e:"🧊",d:"Para glaciar y nieve, con ajuste a tu bota.",q:"Revisados",c:["#E3F2FD","#B0BEC5"]},
+    {n:"Piolets",p:6,e:"🪓",d:"Para progresión en nieve y hielo.",q:"Revisados",c:["#D7CCC8","#A1887F"]},
+    {n:"Mochilas",p:5,e:"🎒",d:"De ataque y de carga, cómodas y ergonómicas.",q:"Buen estado",c:["#C8E6C9","#81C784"]},
+    {n:"Vestimenta de alta montaña",p:10,e:"🧥",d:"Chaquetas, pantalones, guantes y capas térmicas.",q:"Limpia y revisada",c:["#FFCCBC","#E64A19"]}
+  ];
+  var rutas={
+    media:[
+      {n:"Rucu Pichincha",im:"rucu-pichincha",pp:35,e:"🌄",d:"Caminata con vistas a Quito y los volcanes vecinos.",t:"1 día",l:"Moderado",c:["#C8E6C9","#66BB6A"]},
+      {n:"Pasochoa",im:"pasochoa",pp:40,e:"🌲",d:"Bosque nativo y páramo, ideal para iniciarse.",t:"1 día",l:"Básico–Moderado",c:["#DCEDC8","#9CCC65"]},
+      {n:"Laguna de Quilotoa",im:"quilotoa",pp:55,e:"💧",d:"Caminata alrededor de la laguna y su cráter.",t:"1 día",l:"Moderado",c:["#B3E5FC","#4FC3F7"]}
+    ],
+    alta:[
+      {n:"Cotopaxi",im:"cotopaxi",pp:180,e:"🌋",d:"Ascenso al volcán activo más alto del mundo, con glaciar.",t:"2 días",l:"Alto",c:["#E3F2FD","#90A4AE"]},
+      {n:"Illiniza Norte",im:"ilinizas",pp:160,e:"⛰️",d:"Ascenso técnico básico con tramo de nieve y roca.",t:"2 días",l:"Alto",c:["#ECEFF1","#78909C"]},
+      {n:"Chimborazo",im:"chimborazo",pp:220,e:"🏔️",d:"Cumbre más alta del Ecuador, con aclimatación previa.",t:"2–3 días",l:"Muy alto",c:["#E1F5FE","#7986CB"]}
+    ]
+  };
+  var eg=document.getElementById("equipGrid");
+  equipos.forEach(function(x){
+    eg.insertAdjacentHTML("beforeend",'<article class="card reveal"><div class="thumb" style="--c1:'+x.c[0]+';--c2:'+x.c[1]+'">'+x.e+'</div><div class="body"><span class="tag">'+x.q+'</span><h3>'+x.n+'</h3><p>'+x.d+'</p><div class="price">'+money(x.p)+' <small>/ día</small></div><a class="btn btn-sun btn-sm" target="_blank" rel="noopener" href="'+wa("Hola EXCURSIONES EC, quisiera consultar la disponibilidad de: "+x.n)+'">Consultar disponibilidad</a></div></article>');
+  });
+  Object.keys(rutas).forEach(function(k){
+    var box=document.querySelector('[data-route="'+k+'"]');
+    rutas[k].forEach(function(x){
+      box.insertAdjacentHTML("beforeend",'<article class="card reveal"><div class="thumb" style="--c1:'+x.c[0]+';--c2:'+x.c[1]+'"><span>'+x.e+'</span>'+(x.im?'<img src="'+PH[x.im]+'" alt="'+x.n+'" loading="lazy">':'')+'</div><div class="body"><h3>'+x.n+'</h3><p>'+x.d+'</p><div class="meta"><span>⏱ '+x.t+'</span><span class="diff d-'+k+'">Exigencia: '+x.l+'</span><span>🧭 Guía incluido</span></div><div class="price">'+money(x.pp)+' <small>/ persona</small></div><a class="btn btn-wa btn-sm" target="_blank" rel="noopener" href="'+wa("Hola EXCURSIONES EC, me gustaría reservar o recibir información sobre la excursión a "+x.n)+'">Reservar por WhatsApp</a></div></article>');
+    });
+  });
+
+  /* Galería: pega la ruta de tu foto en src (ej. "img/cotopaxi.jpg") */
+  var FOTOS=[
+    {t:"Campamento bajo el Cotopaxi",e:"⛺",c:["#1B2A4A","#E65100"],src:PH["acampada"]},
+    {t:"Chimborazo",e:"🏔️",c:["#E1F5FE","#7986CB"],src:PH["chimborazo"]},
+    {t:"Práctica en el glaciar",e:"🧊",c:["#E3F2FD","#90A4AE"],src:PH["glaciar"]},
+    {t:"Pasochoa",e:"🌲",c:["#DCEDC8","#9CCC65"],src:PH["pasochoa"]},
+    {t:"Laguna de Quilotoa",e:"💧",c:["#B3E5FC","#4FC3F7"],src:PH["quilotoa"]},
+    {t:"Rucu Pichincha",e:"🌄",c:["#C8E6C9","#66BB6A"],src:PH["rucu-pichincha"]}
+  ];
+  var gal=document.getElementById("gal"),lb=document.getElementById("lb");
+  FOTOS.forEach(function(x){
+    gal.insertAdjacentHTML("beforeend",'<figure class="ph reveal" style="--c1:'+x.c[0]+';--c2:'+x.c[1]+'"><span aria-hidden="true">'+x.e+'</span>'+(x.src?'<img src="'+x.src+'" alt="'+x.t+'" loading="lazy">':'')+'<figcaption>'+x.t+'</figcaption></figure>');
+  });
+  gal.querySelectorAll("img").forEach(function(img){
+    img.addEventListener("error",function(){img.remove()});
+    img.addEventListener("click",function(){lb.querySelector("img").src=img.src;lb.hidden=false});
+  });
+  lb.addEventListener("click",function(){lb.hidden=true});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")lb.hidden=true});
+
+  document.querySelectorAll(".thumb img").forEach(function(i){i.addEventListener("error",function(){i.remove()})});
+
+  /* Formulario de fechas -> mensaje de WhatsApp */
+  var $=function(i){return document.getElementById(i)};
+  var todas=rutas.media.concat(rutas.alta);
+  function isEq(){return $("f-tipo").value==="equipo"}
+  function cur(){var l=isEq()?equipos:todas;return l[+$("f-item").value]||l[0]}
+  function fd(s){var a=s.split("-");return a[2]+"/"+a[1]+"/"+a[0]}
+  function days(a,b){var x=a.split("-"),y=b.split("-");return Math.max(1,Math.round((Date.UTC(+y[0],y[1]-1,+y[2])-Date.UTC(+x[0],x[1]-1,+x[2]))/864e5))}
+  function fill(){
+    var eq=isEq();
+    $("f-item").innerHTML=(eq?equipos:todas).map(function(x,i){return '<option value="'+i+'">'+x.n+' · '+money(eq?x.p:x.pp)+(eq?' / día':' / persona')+'</option>'}).join("");
+    $("l-qty").textContent=eq?"Cantidad":"Personas";
+    $("l-d1").textContent=eq?"Fecha de retiro":"Fecha de salida";
+    $("w-d2").hidden=!eq;
+    est();
+  }
+  function est(){
+    var it=cur(),q=Math.max(1,+$("f-qty").value||1),o=$("est");
+    if(isEq()){
+      var a=$("f-d1").value,b=$("f-d2").value;
+      if(a&&b&&b>=a){var n=days(a,b);o.textContent="Total referencial: "+money(it.p*q*n)+" ("+q+" × "+n+(n>1?" días":" día")+")"}
+      else o.textContent="Elige las fechas para ver un total referencial.";
+    }else o.textContent="Total referencial: "+money(it.pp*q)+" ("+q+(q>1?" personas":" persona")+")";
+  }
+  var t=new Date(),iso=t.getFullYear()+"-"+String(t.getMonth()+1).padStart(2,"0")+"-"+String(t.getDate()).padStart(2,"0");
+  $("f-d1").min=iso;$("f-d2").min=iso;
+  $("f-tipo").addEventListener("change",fill);
+  ["f-item","f-qty","f-d1","f-d2"].forEach(function(id){$(id).addEventListener("input",est)});
+  $("f-d1").addEventListener("change",function(){var v=$("f-d1").value;if(v){$("f-d2").min=v;if($("f-d2").value&&$("f-d2").value<v)$("f-d2").value=v}est()});
+  $("rf").addEventListener("submit",function(e){
+    e.preventDefault();
+    var eq=isEq(),it=cur(),q=Math.max(1,+$("f-qty").value||1),nm=$("f-name").value.trim(),a=$("f-d1").value,b=$("f-d2").value,nt=$("f-note").value.trim(),er=$("f-err");
+    if(!nm||!a||(eq&&(!b||b<a))){er.textContent=eq?"Completa tu nombre y un rango de fechas válido.":"Completa tu nombre y la fecha de salida.";return}
+    er.textContent="";est();
+    var m="Hola EXCURSIONES EC, soy "+nm+". Me gustaría cotizar ";
+    if(eq){var n=days(a,b);m+="el alquiler de "+q+" × "+it.n+" del "+fd(a)+" al "+fd(b)+" ("+n+(n>1?" días":" día")+")."}
+    else m+="la excursión a "+it.n+" para "+q+(q>1?" personas":" persona")+", con salida el "+fd(a)+".";
+    m+=" "+$("est").textContent+".";
+    if(nt)m+=" Comentarios: "+nt+".";
+    m+=" ¿Tienen disponibilidad?";
+    window.open(wa(m),"_blank","noopener");
+  });
+  fill();
+
+  var burger=document.getElementById("burger"),menu=document.getElementById("menu");
+  burger.addEventListener("click",function(){var o=menu.classList.toggle("open");burger.setAttribute("aria-expanded",o)});
+  menu.addEventListener("click",function(e){if(e.target.tagName==="A"){menu.classList.remove("open");burger.setAttribute("aria-expanded","false")}});
+  document.querySelectorAll(".tabs button").forEach(function(b){
+    b.addEventListener("click",function(){
+      document.querySelectorAll(".tabs button").forEach(function(x){x.setAttribute("aria-selected",x===b)});
+      document.getElementById("panel-media").hidden=b.dataset.tab!=="media";
+      document.getElementById("panel-alta").hidden=b.dataset.tab!=="alta";
+    });
+  });
+  document.getElementById("year").textContent=new Date().getFullYear();
+  var els=document.querySelectorAll(".reveal");
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add("in")})}
+})();
+</script>
+</body>
+</html>
